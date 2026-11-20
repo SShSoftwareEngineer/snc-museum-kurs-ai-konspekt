@@ -10,6 +10,8 @@ body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 system-ui,"Seg
 .side .top{display:flex;gap:8px;align-items:center;justify-content:space-between;margin-bottom:10px}
 .side .top a{font-size:13px;color:var(--acc);text-decoration:none}
 .side input{width:100%;padding:8px 10px;border:1px solid var(--line);border-radius:8px;background:var(--bg);color:var(--ink);font:inherit;font-size:14px;margin-bottom:6px}
+.cnt{font-size:13px;color:var(--mut);margin:0 6px 2px}.cnt:empty{display:none}
+.close{display:none;border:1px solid var(--line);background:var(--bg);color:var(--ink);border-radius:8px;font:inherit;font-size:15px;padding:4px 10px;cursor:pointer}
 .grp{font-size:12px;text-transform:uppercase;letter-spacing:.06em;color:var(--mut);margin:14px 6px 4px}
 .side nav a{display:flex;gap:8px;align-items:baseline;padding:6px 8px;border-radius:8px;color:var(--ink);text-decoration:none;font-size:14px;line-height:1.35}
 .side nav a:hover{background:var(--accbg)}.side nav a.on{background:var(--accbg);color:var(--acc);font-weight:600}
@@ -45,13 +47,14 @@ code{background:var(--code);padding:1px 5px;border-radius:5px;font:13.5px ui-mon
 details.pr{border:1px solid var(--line);border-radius:10px;margin:8px 0;padding:0 14px}details.pr summary{cursor:pointer;padding:10px 0;display:flex;gap:10px;align-items:center;font-weight:600}
 footer{max-width:880px;margin:30px 0 0;font-size:13px;color:var(--mut)}
 .menu{display:none}
-@media(max-width:860px){.side{transform:translateX(-100%);transition:transform .2s;z-index:5;width:86vw;max-width:320px}.side.open{transform:none}
+@media(max-width:860px){.close{display:block}.side{transform:translateX(-100%);transition:transform .2s;z-index:5;width:86vw;max-width:320px}.side.open{transform:none}
 main{margin:0;padding:64px 16px 60px}.menu{display:block;position:fixed;top:10px;left:10px;z-index:6;padding:8px 14px;border:1px solid var(--line);background:var(--panel);color:var(--ink);border-radius:10px;font:inherit;font-size:14px}}
 @media print{.side,.menu,.up{display:none}main{margin:0;max-width:none;padding:0}section{break-inside:avoid-page;border:0;padding:0}}
 </style></head><body>
 <button class="menu" type="button">☰ Оглавление</button>
-<aside class="side"><div class="top"><b>Оглавление</b><a href="index.html">Українська версія</a></div>
-<input id="q" type="search" placeholder="Поиск по занятиям…" aria-label="Поиск по занятиям…">
+<aside class="side"><div class="top"><b>Оглавление</b><a href="index.html">Українська версія</a><button class="close" type="button" aria-label="Закрыть меню">✕</button></div>
+<input id="q" type="search" enterkeyhint="search" placeholder="Поиск по занятиям…" aria-label="Поиск по занятиям…">
+<div id="cnt" class="cnt" aria-live="polite"></div>
 <nav><a href="#toc" class="totop"><span class="num">↑</span><span class="t">К оглавлению</span></a><div class="grp">Модуль 1. Работа с текстом</div><a href="#l1" data-n="1"><span class="num">1</span><span class="t">Продвинутый prompting и Skills</span></a><a href="#l2" data-n="2"><span class="num">2</span><span class="t">Projects и углублённое создание skill</span></a><a href="#l3" data-n="3"><span class="num">3</span><span class="t">Artifacts и работа с файлами</span></a><a href="#l4" data-n="4"><span class="num">4</span><span class="t">Cowork для текстовых задач и итоговый кейс</span></a><div class="grp">Модуль 2. Аналитика данных</div><a href="#l5" data-n="5"><span class="num">5</span><span class="t">Основы работы с данными и визуализация</span></a><a href="#l6" data-n="6"><span class="num">6</span><span class="t">Claude for Excel</span></a><a href="#l7" data-n="7"><span class="num">7</span><span class="t">Projects + Skills для аналитики</span></a><a href="#l8" data-n="8"><span class="num">8</span><span class="t">Cowork для комплексных аналитических задач + итоговый кейс</span></a><div class="grp">Модуль 3. Claude Design</div><a href="#l9" data-n="9"><span class="num">9</span><span class="t">Техническое задание и введение в Claude Design</span></a><a href="#l10" data-n="10"><span class="num">10</span><span class="t">Дизайн-система и макеты</span></a><a href="#l11" data-n="11"><span class="num">11</span><span class="t">Шрифты, доступность и читабельность</span></a><a href="#l12" data-n="12"><span class="num">12</span><span class="t">Практический кейс: комплексный дизайн-проект</span></a><div class="grp">Модуль 4. Создание сайта с Claude Code</div><a href="#l13" data-n="13"><span class="num">13</span><span class="t">Вступление в Claude Code и понятие агента</span></a><a href="#l14" data-n="14"><span class="num">14</span><span class="t">Безопасность агентов</span></a><a href="#l15" data-n="15"><span class="num">15</span><span class="t">Промпты для агентов и экономия контекста</span></a><a href="#l16" data-n="16"><span class="num">16</span><span class="t">Git, терминал и GitHub: основы</span></a><a href="#l17" data-n="17"><span class="num">17</span><span class="t">Контент и публикация материалов</span></a><a href="#l18" data-n="18"><span class="num">18</span><span class="t">Хостинг, домен и деплой</span></a><a href="#l19" data-n="19"><span class="num">19</span><span class="t">Субагенты и Skills в Claude Code</span></a><a href="#l20" data-n="20"><span class="num">20</span><span class="t">Claude Code, Codex и Manus: кросс-платформенное ревью и итоговый кейс модуля</span></a><div class="grp">Приложение</div><a href="#practice" data-n="practice"><span class="num">✎</span><span class="t">Практика</span></a></nav></aside>
 <main><h1 id="toc">Курс по ИИ — содержание занятий</h1><p class="sub">20 занятий. Каждое занятие описано отдельно: цель, порядок работы, на что обратить внимание, типичные ошибки. Практики вынесены в необязательный раздел в конце. Четыре модуля между собой не связаны, их можно читать в любом порядке. Занятия внутри модуля связаны по цепочке и опираются друг на друга.</p><p class="note">Составлено по PDF-конспектам и практикам (.docx); видеозаписи не использовались. Места, неясные из материалов, помечены в тексте.</p>
 <p class="tocbar"><button type="button" id="expall">Развернуть все</button><button type="button" id="colall">Свернуть все</button></p>
@@ -791,7 +794,7 @@ document.querySelector('.menu').onclick=()=>side.classList.toggle('open');
 links.forEach(l=>l.addEventListener('click',()=>side.classList.remove('open')));
 function oh(){const e=location.hash&&document.querySelector(location.hash);if(e&&e.tagName==='DETAILS')e.open=true}
 addEventListener('hashchange',oh);oh();
-const q=document.getElementById('q'),empty=document.getElementById('empty');
+const q=document.getElementById('q'),empty=document.getElementById('empty'),cnt=document.getElementById('cnt');
 const BS=String.fromCharCode(92);
 const esc=t=>Array.from(t).map(c=>(c.toLowerCase()===c.toUpperCase()&&!/[0-9]/.test(c))?BS+c:c).join('');
 function clearMarks(){document.querySelectorAll('main mark').forEach(m=>{const p=m.parentNode;p.replaceChild(document.createTextNode(m.textContent),m);p.normalize()})}
@@ -813,7 +816,13 @@ q.addEventListener('input',()=>{const words=q.value.trim().toLowerCase().split(/
  if(words.length&&!saved)saved=mods.map(m=>m.open);
  mods.forEach(m=>{const vis=m.querySelectorAll('.card[data-n]:not(.hide)').length>0;m.classList.toggle('hide',words.length>0&&!vis);if(words.length)m.open=vis});
  if(!words.length&&saved){mods.forEach((m,i)=>{m.open=saved[i]});saved=null}
- empty.classList.toggle('hide',any)});
+ empty.classList.toggle('hide',any);
+ const nl=secs.filter(s=>s.dataset.n!=='practice'&&!s.classList.contains('hide')).length;
+ const np=document.querySelectorAll('details.pr:not(.hide)').length;
+ cnt.textContent=!words.length?'':(!any?'Ничего не найдено':'Найдено занятий: '+nl+(np?' · практик: '+np:''))});
+q.addEventListener('keydown',e=>{if(e.key==='Enter'){e.preventDefault();q.blur();side.classList.remove('open');document.getElementById('toc').scrollIntoView()}});
+document.querySelector('.close').onclick=()=>side.classList.remove('open');
+addEventListener('keydown',e=>{if(e.key==='Escape')side.classList.remove('open')});
 let saved=null;
 const allMods=()=>[...document.querySelectorAll('details.mod')];
 document.getElementById('expall').onclick=()=>allMods().forEach(m=>m.open=true);
